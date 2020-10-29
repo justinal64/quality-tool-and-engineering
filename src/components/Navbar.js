@@ -1,15 +1,14 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from "react";
+import { Link } from "gatsby";
+import logo from "../img/logo.svg";
 
 const Navbar = class extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       active: false,
-      navBarActiveClass: '',
-    }
+      navBarActiveClass: "",
+    };
   }
 
   toggleHamburger = () => {
@@ -23,14 +22,14 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: '',
-            })
+              navBarActiveClass: "",
+            });
       }
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -42,7 +41,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -60,24 +59,51 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
               <Link className="navbar-item" to="/products">
                 Products
               </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
+              <Link className="navbar-item" to="/engineeringstaff">
+                Engineering Staff
               </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
+              <Link className="navbar-item" to="/lathe">
+                Lathe
+              </Link>
+              <Link className="navbar-item" to="/cnc">
+                CNC
+              </Link>
+              <Link className="navbar-item" to="/edm">
+                EDM
+              </Link>
+              <Link className="navbar-item" to="/boring">
+                Boring
+              </Link>
+              <Link className="navbar-item" to="/plateandfabrication">
+                Plate & Fabrication
+              </Link>
+              <Link className="navbar-item" to="/conventionalmachining">
+                Conventional Machining
+              </Link>
+              <Link className="navbar-item" to="/grinders">
+                Grinders
+              </Link>
+              <Link className="navbar-item" to="/presses">
+                Presses
+              </Link>
+              <Link className="navbar-item" to="/diesets">
+                Die Sets
+              </Link>
+              <Link className="navbar-item" to="/Special Designs">
+                Special Designs
+              </Link>
+              <Link className="navbar-item" to="/materialhandling">
+                Material Handling
               </Link>
               <Link className="navbar-item" to="/contact/examples">
                 Form Examples
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
-              <a
+              {/* <a
                 className="navbar-item"
                 href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
                 target="_blank"
@@ -86,13 +112,13 @@ const Navbar = class extends React.Component {
                 <span className="icon">
                   <img src={github} alt="Github" />
                 </span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
       </nav>
-    )
+    );
   }
-}
+};
 
-export default Navbar
+export default Navbar;
